@@ -1,0 +1,26 @@
+.custom-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.custom-prev,
+.custom-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}

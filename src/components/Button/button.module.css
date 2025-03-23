@@ -1,0 +1,13 @@
+.button {
+  @apply h-[40px] flex items-center justify-center px-[20px] relative overflow-hidden cursor-pointer;
+
+  &::after {
+    @apply content-[""] absolute w-full h-full bg-[#000] top-full left-[0px] z-[999] transition-all duration-150;
+  }
+
+  &:hover {
+    &::after {
+      @apply top-[0px];
+    }
+  }
+}
