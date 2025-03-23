@@ -1,5 +1,9 @@
 "use client";
-import { Menu02Icon, SearchIcon } from "@hugeicons/core-free-icons";
+import {
+  Cancel01Icon,
+  Menu02Icon,
+  SearchIcon,
+} from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,6 +36,7 @@ const Navbar = () => {
     );
   };
   const [dateTime, setDateTime] = useState<string | null>(null);
+  const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,7 +74,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button className="ml:hidden">
+        <button
+          onClick={() => setShowNavbar((prev) => true)}
+          className="ml:hidden"
+        >
           <HugeiconsIcon
             icon={Menu02Icon}
             size={30}
@@ -112,6 +120,54 @@ const Navbar = () => {
             <div className="text-sm md:text-base">{dateTime}</div>
           </div>
         </div>
+      </div>
+      {/* mobile nav */}
+      <div
+        className={`${
+          showNavbar && "translate-x-[100%]"
+        } fixed top-0 left-[-100%] w-full h-screen bg-white z-[2100] px-[10px] flex flex-col gap-[15px] transition-all duration-150`}
+      >
+        <div className="flex items-center justify-between py-[15px] border-b border-lightgray">
+          <Image
+            className="w-[135px] h-[38px]"
+            width={150}
+            height={50}
+            alt="neu"
+            src="/images/logo.png"
+          />
+          <button onClick={() => setShowNavbar(false)}>
+            <HugeiconsIcon
+              className="cursor-pointer"
+              icon={Cancel01Icon}
+              size={30}
+              color="#004aad"
+              strokeWidth={1.5}
+            />
+          </button>
+        </div>
+        {/* input box */}
+        <div className="w-full sm:w-[270px] h-[38px] bg-lightgray px-[10px] relative">
+          <input
+            type="text"
+            className="w-full h-full border-none outline-none text-sm"
+            placeholder="Search"
+          />
+          <HugeiconsIcon
+            className="absolute top-1/2 right-[10px] translate-y-[-50%]"
+            icon={SearchIcon}
+            size={20}
+            color="currentColor"
+            strokeWidth={1.5}
+          />
+        </div>
+        {/* list */}
+        <ul className="flex flex-col items-start gap-[15px]">
+          {menuItems.map((el) => (
+            <li key={el.name} className="text-sm text-heading font-bold">
+              {el.name}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
