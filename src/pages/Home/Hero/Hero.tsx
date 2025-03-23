@@ -1,6 +1,6 @@
+import { dummyHero } from "@/fakedata/dummyHero";
 import Image from "next/image";
 import React from "react";
-import { dummyHero } from "./dummyHero";
 
 const Hero = () => {
   return (

@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { dummyNews } from "./dummyNews";
 import Button from "@/components/Button";
+import { dummyNews } from "@/fakedata/dummyNews";
 
 const News = () => {
   return (

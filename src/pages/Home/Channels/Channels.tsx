@@ -5,9 +5,9 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-import { dummyChannels } from "./dummyChannel";
 import { LinkBackwardIcon, LinkForwardIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { dummyChannels } from "@/fakedata/dummyChannel";
 
 const Channels = () => {
   return (
