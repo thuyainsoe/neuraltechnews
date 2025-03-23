@@ -25,15 +25,26 @@
   .section-header {
     @apply font-oswald text-2xl lg:text-3xl font-medium tracking-wider uppercase;
   }
+
+  .post-title {
+    @apply font-oswald text-[42px] text-heading font-bold;
+  }
+
+  .post-content {
+    @apply font-inter leading-[1.6];
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-grotesk: var(--font-space-grotesk);
   --font-oswald: var(--font-oswald);
+  --font-inter: var(--font-inter);
+
   /* --color-secondary: #004aad; */
   --color-secondary: #004aad;
   --color-lightgray: #eee;

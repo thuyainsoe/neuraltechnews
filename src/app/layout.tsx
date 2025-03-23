@@ -5,6 +5,7 @@ import {
   Space_Grotesk,
   Noto_Sans_Georgian,
   Oswald,
+  Inter,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
@@ -25,8 +26,8 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const natoGeorgian = Noto_Sans_Georgian({
-  variable: "--font-noto-georgian",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -48,7 +49,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${oswald.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} 
+        ${spaceGrotesk.variable} ${oswald.variable} 
+        ${inter.variable} antialiased`}
       >
         <Navbar />
         {children}

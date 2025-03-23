@@ -7,6 +7,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const menuItems = [
@@ -37,6 +38,7 @@ const Navbar = () => {
   };
   const [dateTime, setDateTime] = useState<string | null>(null);
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
+  const router = useRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,6 +63,7 @@ const Navbar = () => {
           height={50}
           alt="neu"
           src="/images/logo.png"
+          onClick={() => router.push("/")}
         />
         <ul className="hidden uppercase font-grotesk ml:flex items-center gap-[12px] text-sm">
           {menuItems.map(({ name, path }) => (
@@ -164,7 +167,9 @@ const Navbar = () => {
         <ul className="flex flex-col items-start gap-[15px]">
           {menuItems.map((el) => (
             <li key={el.name} className="text-sm text-heading font-bold">
-              {el.name}
+              <Link href="/detail" onClick={() => setShowNavbar(false)}>
+                {el.name}
+              </Link>
             </li>
           ))}
         </ul>
