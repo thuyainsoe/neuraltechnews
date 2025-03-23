@@ -5,7 +5,7 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="main-container section-container w-full">
-      <div className="w-[75%] ml:h-[450px] flex flex-col ml:flex-row items-center gap-y-[20px]">
+      <div className="w-full xl:w-[75%] ml:h-[450px] flex flex-col ml:flex-row items-center gap-y-[20px]">
         <div className="flex-2 w-full aspect-square sm:aspect-auto ml:h-full relative border-y-[0.02rem] border-y-gray-50">
           <Image
             src="/images/temp/image1.png"
